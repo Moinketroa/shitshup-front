@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YoutubeClientComponent } from './youtube-client.component';
+import { HeaderComponent } from './header.component';
 
-describe('YoutubeClientComponent', () => {
-    let component: YoutubeClientComponent;
-    let fixture: ComponentFixture<YoutubeClientComponent>;
+describe('HeaderComponent', () => {
+    let component: HeaderComponent;
+    let fixture: ComponentFixture<HeaderComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [YoutubeClientComponent]
+            declarations: [ HeaderComponent ],
         })
             .compileComponents();
 
-        fixture = TestBed.createComponent(YoutubeClientComponent);
+        fixture = TestBed.createComponent(HeaderComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

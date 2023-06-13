@@ -1,0 +1,18 @@
+export interface YoutubeUser {
+    id?: string;
+    googleId: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    displayName: string;
+    photoUrl: string;
+}
+
+export class NullYoutubeUser implements YoutubeUser {
+    googleId = '';
+    email = '';
+    firstName = '';
+    lastName = '';
+    displayName = '';
+    photoUrl = '';
+}

@@ -1,0 +1,32 @@
+@import "../../../assets/styles/colors";
+
+:host {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100vh;
+    width: 256px;
+
+    box-shadow: -2px 0px 8px 0px $divider;
+    background-color: $background-color;
+
+    color: $text-color;
+
+    .sidebar-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        background-color: $panel-color;
+
+        border-bottom-style: solid;
+        border-bottom-color: $divider;
+        border-bottom-width: 2px;
+
+        .close-sidebar-button {
+            margin: 8px;
+        }
+    }
+}

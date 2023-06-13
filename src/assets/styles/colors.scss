@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@import "./theme-definition";
+
+$primary-palette: map.get($theme, primary);
+$accent-palette: map.get($theme, accent);
+$warn-palette: map.get($theme, warn);
+$foreground-palette: map.get($theme, foreground);
+$background-palette: map.get($theme, background);
+
+@function primary-color($hue: default, $opacity: null) {
+    @return mat.get-color-from-palette($primary-palette, $hue, $opacity);
+}
+
+@function accent-color($hue: default, $opacity: null) {
+    @return mat.get-color-from-palette($accent-palette, $hue, $opacity);
+}
+
+@function warn-color($hue: default, $opacity: null) {
+    @return mat.get-color-from-palette($warn-palette, $hue, $opacity);
+}
+
+@function foreground-color($hue: default, $opacity: null) {
+    @return mat.get-color-from-palette($foreground-palette, $hue, $opacity);
+}
+
+@function background-color($hue: default, $opacity: null) {
+    @return mat.get-color-from-palette($background-palette, $hue, $opacity);
+}
+
+$panel-color: primary-color(700);
+
+$background-color: background-color(background);
+$icon-color: foreground-color(icon);
+$text-color: foreground-color(text);
+$divider: foreground-color(divider);

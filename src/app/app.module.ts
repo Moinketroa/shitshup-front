@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SidebarModule } from './shared/sidebar/sidebar.module';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        HttpClientModule,
+        SidebarModule,
     ],
-    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {
