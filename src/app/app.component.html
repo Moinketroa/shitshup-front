@@ -1,3 +1,6 @@
-Welcome
-
 <router-outlet></router-outlet>
+
+<router-outlet *ngIf="isSidebarOpen$ | async"
+               [name]="RoutingOutlet.SIDEBAR">
+</router-outlet>
+

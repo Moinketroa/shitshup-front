@@ -1,0 +1,20 @@
+<button *ngIf="youtubeUser.id; else noYoutubeUser"
+        mat-icon-button
+        [style.backgroundImage]="'url(' + youtubeUser.photoUrl + ')'"
+        class="youtube-user-icon-btn"
+        aria-label="Youtube User Icon"
+        (click)="click.emit()">
+    <div class="youtube-logo-badge"></div>
+</button>
+
+<ng-template #noYoutubeUser>
+    <button mat-icon-button
+            class="no-youtube-user-btn"
+            aria-label="No Youtube User"
+            (click)="click.emit()">
+        <mat-icon>question_mark</mat-icon>
+        <div class="no-youtube-user-alert-badge">
+            <mat-icon>priority_high</mat-icon>
+        </div>
+    </button>
+</ng-template>

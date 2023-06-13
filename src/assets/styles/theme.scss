@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+@import './theme-definition';
+
+// Include non-theme styles for core.
+@include mat.core();
+
+// Include all theme styles for the components.
+@include mat.all-component-themes($theme);

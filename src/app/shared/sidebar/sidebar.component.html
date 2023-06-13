@@ -1,0 +1,11 @@
+<div class="sidebar-header">
+    <ng-content select="[sidebar-header]"></ng-content>
+
+    <button class="close-sidebar-button"
+            mat-icon-button
+            (click)="closeSidebar()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<ng-content></ng-content>
