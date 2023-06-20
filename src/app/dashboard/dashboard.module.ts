@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { YoutubeUserIconModule } from '../shared/components/youtube-user-icon/youtube-user-icon.module';
+import { NotionConfigIconModule } from '../shared/components/notion-config-icon/notion-config-icon.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { YoutubeUserIconModule } from '../shared/components/youtube-user-icon/yo
         MatToolbarModule,
         MatButtonModule,
         MatIconModule,
+        NotionConfigIconModule,
     ],
 })
 export class DashboardModule {

@@ -1,0 +1,20 @@
+<button *ngIf="notionConfig.id; else noNotionConfig"
+        mat-icon-button
+        class="notion-config-icon-btn"
+        aria-label="Notion Config Icon"
+        (click)="click.emit()">
+    <div class="notion-config-settings-badge">
+        <mat-icon>settings</mat-icon>
+    </div>
+</button>
+
+<ng-template #noNotionConfig>
+    <button mat-icon-button
+            class="no-notion-config-btn"
+            aria-label="No Notion Config"
+            (click)="click.emit()">
+        <div class="no-notion-config-settings-badge">
+            <mat-icon>priority_high</mat-icon>
+        </div>
+    </button>
+</ng-template>
