@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
 
-    .youtube-icon {
+    .notion-icon {
         width: 48px;
         height: 48px;
         margin: 8px;
 
-        background-image: url('../../../../assets/youtube-logo-round.svg');
+        background-image: url('../../../../assets/notion-logo.svg');
         background-color: transparent;
         background-repeat: no-repeat;
         background-size: cover;
@@ -17,17 +17,5 @@
     .header-title {
         align-self: center;
     }
-}
 
-.welcome,
-.error-details {
-    margin: 8px 0 16px 0;
-    text-align: center;
 }
-
-.error-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-}
-

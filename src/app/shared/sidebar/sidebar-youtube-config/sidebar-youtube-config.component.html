@@ -5,21 +5,20 @@
         <span class="header-title">Youtube Config</span>
     </div>
 
-    <div class="sidebar-content">
-        <ng-template [ngIf]="!(youtubeUser.id)" [ngIfElse]="alreadyLoggedIn">
-            <mat-icon class="error-icon">warning</mat-icon>
+    <ng-template [ngIf]="!(youtubeUser.id)" [ngIfElse]="alreadyLoggedIn">
+        <mat-icon class="error-icon">warning</mat-icon>
 
-            <span class="error-details">You haven't linked any Google account for Youtube processing operations</span>
+        <span class="error-details">You haven't linked any Google account for Youtube processing operations</span>
 
-            <button mat-flat-button class="login" (click)="auth()">Continue with Google</button>
-        </ng-template>
+        <button mat-flat-button class="login" (click)="auth()">Continue with Google</button>
+    </ng-template>
 
-        <ng-template #alreadyLoggedIn>
-            <shitshup-youtube-user-icon [youtubeUser]="youtubeUser"></shitshup-youtube-user-icon>
+    <ng-template #alreadyLoggedIn>
+        <shitshup-youtube-user-icon [youtubeUser]="youtubeUser"></shitshup-youtube-user-icon>
 
-            <span class="welcome">Hi, {{ youtubeUser.displayName }} !</span>
+        <span class="welcome">Hi, {{ youtubeUser.displayName }} !</span>
 
-            <button class="logout" mat-flat-button (click)="logout()">Logout</button>
-        </ng-template>
-    </div>
+        <button class="logout" mat-flat-button (click)="logout()">Logout</button>
+    </ng-template>
+
 </shitshup-sidebar>

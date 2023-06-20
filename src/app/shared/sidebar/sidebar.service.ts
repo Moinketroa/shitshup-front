@@ -27,10 +27,18 @@ export class SidebarService {
     }
 
     openYoutubeConfig(): void {
+        this.openSidebar(SidebarPath.YOUTUBE);
+    }
+
+    openNotionConfig(): void {
+        this.openSidebar(SidebarPath.NOTION);
+    }
+
+    private openSidebar(path: SidebarPath) {
         this.router.navigate([
             {
                 outlets: {
-                    [RoutingOutlet.SIDEBAR]: [ SidebarPath.YOUTUBE ]
+                    [RoutingOutlet.SIDEBAR]: [ path ]
                 }
             }
         ]).then(() => {

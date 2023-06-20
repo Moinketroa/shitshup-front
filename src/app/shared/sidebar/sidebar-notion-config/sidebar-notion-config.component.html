@@ -1,0 +1,19 @@
+<shitshup-sidebar>
+    <div sidebar-header class="sidebar-header">
+        <div class="notion-icon"></div>
+
+        <span class="header-title">Notion Config</span>
+    </div>
+
+    <ng-template [ngIf]="!(notionConfig.id)" [ngIfElse]="alreadyNotionConfig">
+        <shitshup-create-notion-config-section [notionConfig]="notionConfig"
+                                               (onCreateNotionConfig)="createNotionConfig($event)">
+        </shitshup-create-notion-config-section>
+    </ng-template>
+
+    <ng-template #alreadyNotionConfig>
+        <shitshup-update-notion-config-section [notionConfig]="notionConfig"
+                                               (onUpdateNotionConfig)="updateNotionConfig($event)">
+        </shitshup-update-notion-config-section>
+    </ng-template>
+</shitshup-sidebar>

@@ -1,0 +1,47 @@
+.notion-config-icon-btn,
+.no-notion-config-btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../../../../assets/notion-logo.svg');
+}
+
+.notion-config-settings-badge,
+.no-notion-config-settings-badge {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    mat-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+    }
+}
+
+.notion-config-icon-btn {
+
+    .notion-config-settings-badge {
+        background-color: green;
+    }
+
+}
+
+.no-notion-config-btn {
+    outline-color: red;
+    outline-style: solid;
+    outline-width: 2px;
+
+    .no-notion-config-settings-badge {
+        background-color: red;
+    }
+}

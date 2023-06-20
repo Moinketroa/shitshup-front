@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.error-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+}
+
+.no-notion-config-details {
+    margin: 8px 8px 16px 8px;
+    text-align: center;
+}
+
+
+.mat-accordion {
+    width: calc(100% - (2 * 8px));
+
+    .mat-expansion-panel-header-description {
+        flex-grow: 0;
+
+        .mat-icon {
+            margin-left: auto;
+        }
+    }
+
+    .mat-mdc-form-field {
+        width: 100%;
+    }
+
+}
+
+.root-block-id-field {
+    margin-top: 24px;
+}
+
+.action-row {
+    margin-top: 32px;
+}

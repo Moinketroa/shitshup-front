@@ -1,0 +1,60 @@
+<span class="notion-config-details">Your notion config is set !</span>
+
+<div class="notion-config-wrapper">
+    <h3>Overview</h3>
+    <mat-list>
+        <mat-list-item>
+            <span matListItemTitle>Your Integration token</span>
+            <span>{{ notionConfig.tokenHint }}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Your Root page ID</span>
+            <span>{{ notionConfig.rootBlock }}</span>
+        </mat-list-item>
+    </mat-list>
+
+    <h3>Update</h3>
+    <mat-accordion multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Update Notion Config
+                </mat-panel-title>
+                <mat-panel-description>
+                    <mat-icon>settings</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <form [formGroup]="updateNotionConfigForm">
+                <mat-checkbox class="update-token-field" formControlName="updateToken"
+                              (change)="toggleToken($event)">
+                    Update token
+                </mat-checkbox>
+
+                <mat-form-field class="internal-integration-token-field" appearance="fill">
+                    <mat-label>Internal Integration Token</mat-label>
+                    <input formControlName="internalIntegrationToken" matInput>
+                    <mat-icon matSuffix>token</mat-icon>
+                    <mat-hint>Notion Integration Token. Find more about Notion integration Setup...</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field class="root-block-id-field" appearance="fill">
+                    <mat-label>Notion Root Page ID</mat-label>
+                    <input formControlName="rootBlockId" matInput>
+                    <mat-icon matSuffix>description</mat-icon>
+                    <mat-hint>Make sure to connect this page with your integration. Find more about Notion
+                        integration Setup...
+                    </mat-hint>
+                </mat-form-field>
+            </form>
+
+            <mat-action-row class="action-row">
+                <button mat-button color="primary"
+                        [disabled]="updateNotionConfigForm.invalid"
+                        (click)="updateNotionConfig()">
+                    Submit
+                </button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
