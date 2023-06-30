@@ -1,3 +1,9 @@
 <shitshup-header></shitshup-header>
 
-<router-outlet></router-outlet>
+<mat-grid-list cols="8" rowHeight="256px" class="dashboard--wrapper">
+    <mat-grid-tile colspan="8" rowspan="1">
+        <shitshup-prerequisites-tile *ngIf="showPrerequisites">
+            <shitshup-notion-prerequisite *ngIf="showNotionPrerequisite"></shitshup-notion-prerequisite>
+        </shitshup-prerequisites-tile>
+    </mat-grid-tile>
+</mat-grid-list>

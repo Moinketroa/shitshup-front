@@ -11,6 +11,18 @@
             <span matListItemTitle>Your Root page ID</span>
             <span>{{ notionConfig.rootBlock }}</span>
         </mat-list-item>
+        <mat-list-item *ngIf="!!mediaLibraryDatabase.id">
+            <span matListItemTitle>Your Media Library</span>
+            <span matListItemLine class="notion-media-library--title">
+                {{ mediaLibraryDatabase.title }}
+            </span>
+            <span matListItemLine class="notion-media-library--description">
+                {{ mediaLibraryDatabase.description }}
+            </span>
+            <span matListItemLine class="notion-media-library--id">
+                {{ mediaLibraryDatabase.id }}
+            </span>
+        </mat-list-item>
     </mat-list>
 
     <h3>Update</h3>

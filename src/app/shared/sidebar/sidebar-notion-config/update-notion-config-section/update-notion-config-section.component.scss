@@ -12,6 +12,20 @@
 
 .notion-config-wrapper {
     margin-left: 16px;
+
+    .notion-media-library--description {
+        font-size: small;
+        font-weight: bold;
+        text-wrap: wrap;
+        display: inline-flex;
+        margin-left: 4px;
+    }
+
+    .notion-media-library--id {
+        font-size: 12px;
+        line-height: 12px;
+        text-align: end;
+    }
 }
 
 

@@ -3,6 +3,7 @@ import { NotionConfig, NullNotionConfig } from '../../../models/notion-config.mo
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { UpdateNotionConfigDTO } from '../../../dtos/update-notion-config.dto';
+import { NotionDatabase, NullNotionDatabase } from '../../../models/notion-database.model';
 
 @Component({
   selector: 'shitshup-update-notion-config-section',
@@ -13,6 +14,9 @@ export class UpdateNotionConfigSectionComponent implements OnChanges {
 
     @Input()
     notionConfig: NotionConfig = new NullNotionConfig();
+
+    @Input()
+    mediaLibraryDatabase: NotionDatabase = new NullNotionDatabase();
 
     @Output()
     onUpdateNotionConfig: EventEmitter<UpdateNotionConfigDTO> = new EventEmitter();
