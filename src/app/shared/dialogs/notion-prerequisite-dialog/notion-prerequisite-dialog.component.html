@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Generate the Media Library Notion Database</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Notion Prerequisites</h3>
+    <p>
+        In order to correctly use the Shitshup App, you must create the Media Library Database.
+        No worries, we'll do it automatically for you, but we want to explain you the ins and outs.
+    </p>
+
+    <p>
+        Just make sure that the root block id in your Notion Config is set. It is needed in order to create
+        the media library within it.
+    </p>
+
+    <h3>What's that all about ?</h3>
+    <p>
+        The Media Library Database will regroup all the details of your tracks, and it's the base for all
+        the workflow. Thanks to Notion and all the other tools used in the Shitshup App, you will be able
+        to access all the informations about the BPM, Keys and Time signatures,... While also being able
+        to add and modify other data that only you, as an artist, can provide ! Like the common use-cases,
+        the noticeable layers, mood, personal rating,...
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>CANCEL</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>CREATE</button>
+</mat-dialog-actions>

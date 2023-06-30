@@ -1,0 +1,30 @@
+<div class="notion-prerequisite">
+    <div class="notion-prerequisite--header">
+        <div class="notion-prerequisite--icon"></div>
+        <div class="notion-prerequisite--title">
+            Media Library Database
+        </div>
+    </div>
+
+    <span class="notion-prerequisite--content">
+        Create the Media Library Notion Database in order to proceed !
+    </span>
+
+    <div class="notion-prerequisite--button">
+        <button *ngIf="!showProcessing && !showDone"
+                mat-button
+                (click)="createMediaLibrary()">
+            CREATE
+        </button>
+        <button *ngIf="showProcessing && !showDone"
+                mat-button disabled
+                class="notion-prerequisite--button--progress">
+            <mat-spinner color="primary" class="progress-spinner"></mat-spinner>
+        </button>
+        <button *ngIf="!showProcessing && showDone"
+                mat-button disabled
+                class="notion-prerequisite--button--done">
+            <mat-icon class="done-icon">done</mat-icon>
+        </button>
+    </div>
+</div>
