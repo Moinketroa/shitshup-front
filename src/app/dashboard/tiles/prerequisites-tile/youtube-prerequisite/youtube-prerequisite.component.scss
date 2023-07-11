@@ -1,0 +1,67 @@
+@import "../../../../../assets/styles/colors";
+
+.youtube-prerequisite {
+    border-radius: 8px;
+    background-color: $warn-color;
+    padding: 8px;
+    height: calc(100% - (8px + 16px));
+    min-width: 256px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .youtube-prerequisite--header {
+        display: flex;
+        flex-direction: row;
+
+        .youtube-prerequisite--icon {
+            background-image: url('../../../../../assets/youtube-logo-round.svg');
+            background-size: cover;
+            width: 48px;
+            min-width: 48px;
+            height: 48px;
+            min-height: 48px;
+        }
+
+        .youtube-prerequisite--title {
+            align-self: center;
+            font-size: 24px;
+            margin: 0 8px;
+
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+        }
+    }
+
+    .youtube-prerequisite--content {
+        margin: 0 8px;
+
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .youtube-prerequisite--button {
+        button {
+            float: right;
+        }
+
+        .youtube-prerequisite--button--progress {
+            .progress-spinner {
+                width: 24px !important;
+                height: 24px !important;
+            }
+        }
+
+        .youtube-prerequisite--button--done {
+            .done-icon {
+                margin-left: auto;
+                width: 24px;
+                height: 24px;
+                font-size: 24px;
+            }
+        }
+    }
+}
