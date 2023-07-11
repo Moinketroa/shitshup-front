@@ -19,6 +19,61 @@
         <span class="welcome">Hi, {{ youtubeUser.displayName }} !</span>
 
         <button class="logout" mat-flat-button (click)="logout()">Logout</button>
+
+        <div *ngIf="
+                !!youtubeShitshupPlaylists.pendingPlaylist.id
+                && !!youtubeShitshupPlaylists.processedPlaylist.id
+                && !!youtubeShitshupPlaylists.waitingPlaylist.id
+             "
+             class="youtube-user-info">
+            <h3>Shitshup Playlists</h3>
+            <mat-list>
+                <mat-list-item>
+                    <img matListItemIcon class="youtube-user-playlist--icon"
+                         [src]="youtubeShitshupPlaylists.pendingPlaylist.thumbnailUrl">
+                    <span matListItemTitle>Pending Videos Playlist</span>
+                    <span matListItemLine class="youtube-user-playlist--title">
+                        {{ youtubeShitshupPlaylists.pendingPlaylist.title }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--description">
+                        {{ youtubeShitshupPlaylists.pendingPlaylist.description }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--id">
+                        {{ youtubeShitshupPlaylists.pendingPlaylist.id }}
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <img matListItemIcon class="youtube-user-playlist--icon"
+                         [src]="youtubeShitshupPlaylists.processedPlaylist.thumbnailUrl">
+                    <span matListItemTitle>Pending Videos Playlist</span>
+                    <span matListItemLine class="youtube-user-playlist--title">
+                        {{ youtubeShitshupPlaylists.processedPlaylist.title }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--description">
+                        {{ youtubeShitshupPlaylists.processedPlaylist.description }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--id">
+                        {{ youtubeShitshupPlaylists.processedPlaylist.id }}
+                    </span>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <img matListItemIcon class="youtube-user-playlist--icon"
+                         [src]="youtubeShitshupPlaylists.waitingPlaylist.thumbnailUrl">
+                    <span matListItemTitle>Pending Videos Playlist</span>
+                    <span matListItemLine class="youtube-user-playlist--title">
+                        {{ youtubeShitshupPlaylists.waitingPlaylist.title }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--description">
+                        {{ youtubeShitshupPlaylists.waitingPlaylist.description }}
+                    </span>
+                    <span matListItemLine class="youtube-user-playlist--id">
+                        {{ youtubeShitshupPlaylists.waitingPlaylist.id }}
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
     </ng-template>
 
 </shitshup-sidebar>

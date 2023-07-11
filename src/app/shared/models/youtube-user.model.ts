@@ -6,6 +6,9 @@ export interface YoutubeUser {
     lastName: string;
     displayName: string;
     photoUrl: string;
+    pendingPlaylistId: string;
+    processedPlaylistId: string;
+    waitingPlaylistId: string;
 }
 
 export class NullYoutubeUser implements YoutubeUser {
@@ -15,4 +18,7 @@ export class NullYoutubeUser implements YoutubeUser {
     lastName = '';
     displayName = '';
     photoUrl = '';
+    pendingPlaylistId = '';
+    processedPlaylistId = '';
+    waitingPlaylistId = '';
 }

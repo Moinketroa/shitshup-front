@@ -10,7 +10,7 @@ import { environment } from '../../../environment/environment';
 export class NotionService {
 
     private readonly baseUrl = environment.apiUrl;
-    private readonly path: string = 'notion'
+    private readonly path: string = 'notion';
 
     constructor(private readonly http: HttpClient) {
     }

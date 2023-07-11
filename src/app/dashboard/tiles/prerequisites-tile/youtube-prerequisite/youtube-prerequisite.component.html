@@ -1,0 +1,30 @@
+<div class="youtube-prerequisite">
+    <div class="youtube-prerequisite--header">
+        <div class="youtube-prerequisite--icon"></div>
+        <div class="youtube-prerequisite--title">
+            Workflow Shitshup Playlists
+        </div>
+    </div>
+
+    <span class="youtube-prerequisite--content">
+        Create the YouTube Shitshup Playlists in order to proceed !
+    </span>
+
+    <div class="youtube-prerequisite--button">
+        <button *ngIf="!showProcessing && !showDone"
+                mat-button
+                (click)="createShitshupPlaylists()">
+            CREATE
+        </button>
+        <button *ngIf="showProcessing && !showDone"
+                mat-button disabled
+                class="youtube-prerequisite--button--progress">
+            <mat-spinner color="primary" class="progress-spinner"></mat-spinner>
+        </button>
+        <button *ngIf="!showProcessing && showDone"
+                mat-button disabled
+                class="youtube-prerequisite--button--done">
+            <mat-icon class="done-icon">done</mat-icon>
+        </button>
+    </div>
+</div>

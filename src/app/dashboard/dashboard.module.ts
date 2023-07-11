@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NotionPrerequisiteComponent } from './tiles/prerequisites-tile/notion-prerequisite/notion-prerequisite.component';
+import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube-prerequisite/youtube-prerequisite.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { NotionPrerequisiteComponent } from './tiles/prerequisites-tile/notion-p
         HeaderComponent,
         PrerequisitesTileComponent,
         NotionPrerequisiteComponent,
+        YoutubePrerequisiteComponent,
     ],
     imports: [
         CommonModule,

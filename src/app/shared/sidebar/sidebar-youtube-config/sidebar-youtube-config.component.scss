@@ -19,6 +19,32 @@
     }
 }
 
+.youtube-user-info {
+    margin-left: 16px;
+
+    .youtube-user-playlist--icon {
+        margin: 0 0 auto 0;
+        height: auto;
+        width: 48px;
+        padding-right: 8px;
+        object-fit: contain;
+    }
+
+    .youtube-user-playlist--description {
+        font-size: small;
+        font-weight: bold;
+        text-wrap: wrap;
+        display: inline-flex;
+        margin-left: 4px;
+    }
+
+    .youtube-user-playlist--id {
+        font-size: 12px;
+        line-height: 12px;
+        text-align: end;
+    }
+}
+
 .welcome,
 .error-details {
     margin: 8px 0 16px 0;
@@ -31,3 +57,6 @@
     font-size: 48px;
 }
 
+.mat-mdc-list-item {
+    margin-bottom: 16px;
+}

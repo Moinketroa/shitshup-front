@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Generate the Workflow Shitshup Playlists</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Youtube Prerequisites</h3>
+    <p>
+        In order to correctly use (and supply with musics) the Shitshup App, you must create the Shitshup Playlists
+        No worries, we'll do it automatically for you, but we want to explain you the ins and outs.
+    </p>
+
+    <h3>What's that all about ?</h3>
+    <p>
+        YouTube is used to provide your Shitshup with all the contents that your future musical creations will use.
+        That's why (and also for further operations) we will set up your Youtube account with 3 core Playlists.
+    </p>
+
+    <p>
+        First, the "Pending Playlist". This is your entry point. We will use this particular playlist to give
+        the app something to work with. When you want to process the musics you want, add them to that "Pending Playlist".
+    </p>
+
+    <p>
+        Second, the "Processed Playlist". Once a music is processed it will be deleted from the "Pending Playlist"
+        and added to the "Processed Playlist", in order to keep track of the Youtube Videos already processed.
+    </p>
+
+    <p>
+        And lastly, the "Waiting Playlist". This one might be confusing but very usefull !
+        Let say that one day you add a music named "Old McDonald had a Farm" and you process it via the Shitshup App.
+        Then a year later, after having totally forgotten that you've already processed "Old McDonald had a Farm",
+        you add it again in the "Pending Playlist". The app will detect that there is a duplicate and will transfer the
+        music to the "Waiting Playlist" in order to wait for the user confirmation. (This is the basic scenario but based
+        on how the duplicate detection algorithm works, the duplication warnings might be more nuanced).
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>CANCEL</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>CREATE</button>
+</mat-dialog-actions>
