@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environment/environment';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { NullYoutubeShitshupPlaylists, YoutubeShitshupPlaylists } from '../models/youtube-playlist.model';
+import {
+    NullYoutubePlaylistPreview,
+    NullYoutubeShitshupPlaylists,
+    YoutubeShitshupPlaylists,
+} from '../models/youtube-playlist.model';
 
 @Injectable({
     providedIn: 'root',
@@ -33,4 +37,12 @@ export class YoutubeService {
             );
     }
 
+    fetchPendingPlaylistPreview(): Observable<any> {
+        const endPoint = 'pending/preview';
+
+        return this.http.get(`${this.baseUrl}/${this.path}/${endPoint}`)
+            .pipe(
+                map(pendingPlaylistPreview => pendingPlaylistPreview ?? new NullYoutubePlaylistPreview())
+            );
+    }
 }

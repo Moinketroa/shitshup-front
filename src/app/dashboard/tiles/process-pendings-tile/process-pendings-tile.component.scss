@@ -1,0 +1,81 @@
+@import "../../../../assets/styles/colors";
+
+$thumbnail-clip: 22px;
+
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.process-pendings-card {
+    width: 100%;
+    height: 100%;
+
+    .process-pendings-card--title {
+        color: $text-color;
+    }
+
+    .process-pendings-card--content {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        gap: 16px;
+        margin-top: 8px;
+
+        .process-pendings-card--thumbnails {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 8px;
+
+            .thumbnail-wrapper {
+                height: 100%;
+                align-self: center;
+                position: relative;
+
+                img {
+                    object-fit: contain;
+                    clip-path: inset($thumbnail-clip 0px);
+                    margin-top: calc(-#{$thumbnail-clip});
+                    width: auto;
+                    height: calc(100% + #{$thumbnail-clip * 2});
+                }
+
+                .last-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $text-color;
+
+                    background: $overlay-transparent;
+                    background-size: 100% 100%;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .process-pendings-card--process-button {
+            align-self: end;
+        }
+    }
+}
+
+::ng-deep {
+    .mat-mdc-card-header-text {
+        overflow-x: hidden !important;
+    }
+}
+
+.mat-mdc-card-title,
+.mat-mdc-card-subtitle {
+    overflow-x: hidden;
+}
