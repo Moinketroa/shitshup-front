@@ -1,10 +1,16 @@
 <shitshup-header></shitshup-header>
 
-<mat-grid-list cols="8" rowHeight="256px" class="dashboard--wrapper">
-    <mat-grid-tile colspan="8" rowspan="1">
-        <shitshup-prerequisites-tile *ngIf="showPrerequisites">
+<mat-grid-list cols="8" rowHeight="256px" gutterSize="16px" class="dashboard--wrapper">
+    <mat-grid-tile colspan="8" rowspan="1" *ngIf="showPrerequisites">
+        <shitshup-prerequisites-tile>
             <shitshup-notion-prerequisite *ngIf="showNotionPrerequisite"></shitshup-notion-prerequisite>
             <shitshup-youtube-prerequisite *ngIf="showYoutubePrerequisite"></shitshup-youtube-prerequisite>
         </shitshup-prerequisites-tile>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="6" rowspan="1">
+        <shitshup-process-pendings-tile *ngIf="showProcessPendings"
+                                        [pendingPlaylistPreview]="pendingPlaylistPreview">
+        </shitshup-process-pendings-tile>
     </mat-grid-tile>
 </mat-grid-list>

@@ -1,0 +1,23 @@
+<mat-card class="process-pendings-card">
+    <mat-card-header>
+        <mat-card-title class="process-pendings-card--title">
+            You have {{ pendingPlaylistPreview.numberOfItems }} videos pending.<ng-content></ng-content>
+        </mat-card-title>
+        <mat-card-subtitle>Including {{ pendingPlaylistPreview | playlistItemsTitlesPreview }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="process-pendings-card--content">
+        <div class="process-pendings-card--thumbnails">
+            <div *ngFor="let playlistItem of pendingPlaylistPreview.items; last as last"
+                 class="thumbnail-wrapper">
+                <div *ngIf="last" class="last-overlay"> + {{ pendingPlaylistPreview.numberOfItems - pendingPlaylistPreview.items.length }}</div>
+                <img [src]="playlistItem.thumbnailUrl">
+            </div>
+        </div>
+
+        <button mat-fab color="primary" (click)="process()"
+                class="process-pendings-card--process-button">
+            <mat-icon>playlist_add</mat-icon>
+        </button>
+    </mat-card-content>
+</mat-card>

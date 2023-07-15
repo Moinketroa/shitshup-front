@@ -16,6 +16,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NotionPrerequisiteComponent } from './tiles/prerequisites-tile/notion-prerequisite/notion-prerequisite.component';
 import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube-prerequisite/youtube-prerequisite.component';
+import { ProcessPendingsTileComponent } from './tiles/process-pendings-tile/process-pendings-tile.component';
+import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-titles-preview.pipe';
 
 @NgModule({
     declarations: [
@@ -24,6 +26,7 @@ import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube
         PrerequisitesTileComponent,
         NotionPrerequisiteComponent,
         YoutubePrerequisiteComponent,
+        ProcessPendingsTileComponent,
     ],
     imports: [
         CommonModule,
@@ -39,6 +42,7 @@ import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube
         MatCardModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        PlaylistItemsTitlesPreviewPipe,
     ],
 })
 export class DashboardModule {
