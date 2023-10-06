@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environment/environment';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import {
     NullYoutubePlaylistPreview,
     YoutubePlaylistPreview,
@@ -25,7 +25,10 @@ export class YoutubeService {
 
         return this.http.get<YoutubeShitshupPlaylists>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
-                map(youtubeShitshupPlaylists => youtubeShitshupPlaylists ?? new NullYoutubeShitshupPlaylists())
+                map(youtubeShitshupPlaylists => youtubeShitshupPlaylists ?? new NullYoutubeShitshupPlaylists()),
+                catchError((err) => {
+                    return of(new NullYoutubeShitshupPlaylists());
+                })
             );
     }
 
@@ -43,7 +46,10 @@ export class YoutubeService {
 
         return this.http.get<YoutubePlaylistPreview>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
-                map(pendingPlaylistPreview => pendingPlaylistPreview ?? new NullYoutubePlaylistPreview())
+                map(pendingPlaylistPreview => pendingPlaylistPreview ?? new NullYoutubePlaylistPreview()),
+                catchError((err) => {
+                    return of(new NullYoutubePlaylistPreview());
+                })
             );
     }
 
