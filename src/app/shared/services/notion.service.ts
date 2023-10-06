@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { NotionDatabase, NullNotionDatabase } from '../models/notion-database.model';
 import { environment } from '../../../environment/environment';
 
@@ -20,7 +20,10 @@ export class NotionService {
 
         return this.http.get<NotionDatabase>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
-                map(notionDatabase => notionDatabase ?? new NullNotionDatabase())
+                map(notionDatabase => notionDatabase ?? new NullNotionDatabase()),
+                catchError((err) => {
+                    return of(new NullNotionDatabase());
+                })
             );
     }
 
