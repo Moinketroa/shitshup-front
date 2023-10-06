@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import {
     NullYoutubePlaylistPreview,
+    YoutubePlaylistPreview,
     NullYoutubeShitshupPlaylists,
     YoutubeShitshupPlaylists,
 } from '../models/youtube-playlist.model';
@@ -37,12 +38,18 @@ export class YoutubeService {
             );
     }
 
-    fetchPendingPlaylistPreview(): Observable<any> {
+    fetchPendingPlaylistPreview(): Observable<YoutubePlaylistPreview> {
         const endPoint = 'pending/preview';
 
-        return this.http.get(`${this.baseUrl}/${this.path}/${endPoint}`)
+        return this.http.get<YoutubePlaylistPreview>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
                 map(pendingPlaylistPreview => pendingPlaylistPreview ?? new NullYoutubePlaylistPreview())
             );
+    }
+
+    processPending(): Observable<any> {
+        const endPoint = 'process/pending';
+
+        return this.http.get(`${this.baseUrl}/${this.path}/${endPoint}`);
     }
 }
