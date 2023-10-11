@@ -13,13 +13,13 @@ export class SidebarService {
 
     constructor(private readonly router: Router,
                 private readonly route: ActivatedRoute) {
-        this.router.navigate([
-            {
-                outlets: {
-                    [RoutingOutlet.SIDEBAR]: []
-                }
-            }
-        ], { relativeTo: this.route.parent });
+        // this.router.navigate([
+        //     {
+        //         outlets: {
+        //             [RoutingOutlet.SIDEBAR]: []
+        //         }
+        //     }
+        // ], { relativeTo: this.route.parent });
     }
 
     get isSidebarOpen$() {

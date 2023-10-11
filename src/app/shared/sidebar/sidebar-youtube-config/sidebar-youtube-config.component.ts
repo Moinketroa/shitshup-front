@@ -61,6 +61,8 @@ export class SidebarYoutubeConfigComponent implements OnInit{
     }
 
     logout() {
+        localStorage.removeItem('accessToken');
+
         this.youtubeAuthService.logout()
             .subscribe(() => {
                 this.updateUserCallback();

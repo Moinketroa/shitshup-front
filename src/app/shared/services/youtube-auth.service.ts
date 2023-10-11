@@ -14,13 +14,13 @@ interface UrlWrapper {
 export class YoutubeAuthService {
 
     private readonly baseUrl = environment.apiUrl;
-    private readonly path: string = 'youtube/auth'
+    private readonly path: string = 'auth'
 
     constructor(private http: HttpClient) {
     }
 
     getGeneratedAuthUrl(): Observable<string> {
-        const endPoint = 'generate-auth-url';
+        const endPoint = 'youtube/generate-auth-url';
 
         return this.http.get<UrlWrapper>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
@@ -29,7 +29,7 @@ export class YoutubeAuthService {
     }
 
     getCurrentUser(): Observable<YoutubeUser> {
-        const endPoint = 'me';
+        const endPoint = 'youtube/me';
 
         return this.http.get<YoutubeUser>(`${this.baseUrl}/${this.path}/${endPoint}`)
             .pipe(
@@ -40,7 +40,7 @@ export class YoutubeAuthService {
     }
 
     logout(): Observable<any> {
-        const endPoint = 'logout';
+        const endPoint = 'youtube/logout';
 
         return this.http.get<any>(`${this.baseUrl}/${this.path}/${endPoint}`);
     }
