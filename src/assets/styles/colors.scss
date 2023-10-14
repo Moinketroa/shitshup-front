@@ -35,7 +35,8 @@ $accent-color: accent-color(700);
 
 $warn-color: warn-color(700);
 
-$background-color: background-color(background);
+$background-color: background-color(background, 1);
+$light-background-color: #4f4f4f;
 $icon-color: foreground-color(icon);
 $text-color: foreground-color(text);
 $divider: foreground-color(divider);

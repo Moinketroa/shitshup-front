@@ -7,6 +7,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { combineLatest, of, switchMap } from 'rxjs';
 import { YoutubeService } from '../../services/youtube.service';
 import { NullYoutubeShitshupPlaylists, YoutubeShitshupPlaylists } from '../../models/youtube-playlist.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'shitshup-sidebar-youtube-config',
@@ -24,7 +25,8 @@ export class SidebarYoutubeConfigComponent implements OnInit{
     constructor(private readonly youtubeAuthService: YoutubeAuthService,
                 private readonly youtubeService: YoutubeService,
                 private readonly userStore: UserStore,
-                private readonly popupService: PopupService) {
+                private readonly popupService: PopupService,
+                private readonly authService: AuthService,) {
     }
 
     ngOnInit() {
@@ -61,7 +63,7 @@ export class SidebarYoutubeConfigComponent implements OnInit{
     }
 
     logout() {
-        localStorage.removeItem('token');
+        this.authService.logout();
 
         this.youtubeAuthService.logout()
             .subscribe(() => {

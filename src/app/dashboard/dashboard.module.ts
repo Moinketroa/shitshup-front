@@ -18,6 +18,9 @@ import { NotionPrerequisiteComponent } from './tiles/prerequisites-tile/notion-p
 import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube-prerequisite/youtube-prerequisite.component';
 import { ProcessPendingsTileComponent } from './tiles/process-pendings-tile/process-pendings-tile.component';
 import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-titles-preview.pipe';
+import { TaskProgressTileComponent } from './tiles/tasks-progress-tile/task-progress-tile.component';
+import { TreeTableModule } from 'primeng/treetable';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
     declarations: [
@@ -27,6 +30,7 @@ import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-t
         NotionPrerequisiteComponent,
         YoutubePrerequisiteComponent,
         ProcessPendingsTileComponent,
+        TaskProgressTileComponent,
     ],
     imports: [
         CommonModule,
@@ -43,6 +47,8 @@ import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-t
         MatDialogModule,
         MatProgressSpinnerModule,
         PlaylistItemsTitlesPreviewPipe,
+        TreeTableModule,
+        MatProgressBarModule,
     ],
 })
 export class DashboardModule {

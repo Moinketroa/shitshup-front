@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'shitshup-auth-callback',
@@ -8,14 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AuthCallbackComponent implements OnInit {
 
-    constructor(private readonly activatedRoute: ActivatedRoute) {
+    constructor(private readonly activatedRoute: ActivatedRoute,
+                private readonly authService: AuthService) {
 
     }
 
     ngOnInit() {
         this.activatedRoute.queryParams.subscribe(queryParams => {
             const token = queryParams['token'];
-            localStorage.setItem('token', token);
+            this.authService.login(token);
 
             window.close();
         });

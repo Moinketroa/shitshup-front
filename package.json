@@ -22,6 +22,8 @@
     "@angular/router": "^16.1.1",
     "@ngneat/until-destroy": "^10.0.0-beta.0",
     "iconv-lite": "^0.6.3",
+    "ngx-socket-io": "^4.5.1",
+    "primeng": "^16.5.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",
     "wildcard": "^2.0.1",
