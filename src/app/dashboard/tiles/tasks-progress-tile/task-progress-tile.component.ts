@@ -38,10 +38,7 @@ export class TaskProgressTileComponent implements OnInit {
                 map(taskTreeNodeUpdate => (this.taskTreeNodeMapper.map(taskTreeNodeUpdate))),
             )
             .subscribe(taskTreeNodeUpdate => {
-                console.log('Before push', taskTreeNodeUpdate.label);
                 this.pushUpdatedTaskTreeNode(taskTreeNodeUpdate);
-                console.log('After push', taskTreeNodeUpdate.label);
-
             });
     }
 
@@ -56,7 +53,6 @@ export class TaskProgressTileComponent implements OnInit {
 
         if (isNullOrUndefined(taskTreeNodeFound)) {
             if (isNullOrUndefined(taskTreeNodeUpdate.parentId)) {
-                console.log('push root node');
                 this.taskTrees?.push(taskTreeNodeUpdate);
                 this.loadData();
             } else {
