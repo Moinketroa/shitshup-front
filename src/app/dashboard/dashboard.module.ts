@@ -21,6 +21,8 @@ import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-t
 import { TaskProgressTileComponent } from './tiles/tasks-progress-tile/task-progress-tile.component';
 import { TreeTableModule } from 'primeng/treetable';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { WarningsTileComponent } from './tiles/warnings-tile/warnings-tile.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
     declarations: [
@@ -31,6 +33,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         YoutubePrerequisiteComponent,
         ProcessPendingsTileComponent,
         TaskProgressTileComponent,
+        WarningsTileComponent,
     ],
     imports: [
         CommonModule,
@@ -48,6 +51,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
         MatProgressSpinnerModule,
         PlaylistItemsTitlesPreviewPipe,
         TreeTableModule,
+        TableModule,
         MatProgressBarModule,
     ],
 })

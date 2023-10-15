@@ -9,14 +9,17 @@
             </shitshup-prerequisites-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="6" rowspan="1" class="dashboard-process-pending--tile">
-            <shitshup-process-pendings-tile *ngIf="showProcessPendings"
-                                            [pendingPlaylistPreview]="pendingPlaylistPreview">
+        <mat-grid-tile colspan="5" rowspan="1" *ngIf="showProcessPendings" class="dashboard-process-pending--tile">
+            <shitshup-process-pendings-tile [pendingPlaylistPreview]="pendingPlaylistPreview">
             </shitshup-process-pendings-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="8" rowspan="2" class="dashboard-task-progress--tile">
-            <shitshup-task-progress-tile *ngIf="showTaskProgress"></shitshup-task-progress-tile>
+        <mat-grid-tile colspan="5" rowspan="1" *ngIf="showWarnings" class="dashboard-process-pending--tile">
+            <shitshup-warnings-tile></shitshup-warnings-tile>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="8" rowspan="2" *ngIf="showTaskProgress" class="dashboard-task-progress--tile">
+            <shitshup-task-progress-tile></shitshup-task-progress-tile>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
