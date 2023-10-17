@@ -1,0 +1,132 @@
+@mixin section($section-number, $section-mode) {
+    #section-#{$section-number}-#{$section-mode} {
+        pointer-events: bounding-box;
+    }
+
+    #section-#{$section-number}-#{$section-mode}:hover,
+    .active {
+        [id^='section-'] {
+            stroke: white;
+            filter: drop-shadow( 0 0 40px #FFFFFFAF);
+        }
+    }
+}
+
+#camelot-wheel {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    @for $i from 1 through 12 {
+        @include section($i, 'A');
+        @include section($i, 'B');
+    }
+
+    .cls-1 {
+        fill: #c5deb0;
+    }
+
+    .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24 {
+        stroke: #4e4d4d;
+        stroke-miterlimit: 10;
+        stroke-width: 20px;
+    }
+
+    .cls-2 {
+        fill: #ac91c4;
+    }
+
+    .cls-3 {
+        fill: #a5c952;
+    }
+
+    .cls-4 {
+        fill: #bfe5fb;
+    }
+
+    .cls-5 {
+        fill: #bde2e7;
+    }
+
+    .cls-6 {
+        fill: #cbeafc;
+    }
+
+    .cls-7 {
+        fill: #d086b8;
+    }
+
+    .cls-8 {
+        fill: #60beb2;
+    }
+
+    .cls-9 {
+        fill: #6dba73;
+    }
+
+    .cls-10 {
+        fill: #5ec1d0;
+    }
+
+    .cls-11 {
+        fill: #69c8f0;
+    }
+
+    .cls-12 {
+        fill: #99b0dc;
+    }
+
+    .cls-13 {
+        fill: #eff7fd;
+    }
+
+    .cls-14 {
+        fill: #fbf3f9;
+    }
+
+    .cls-15 {
+        fill: #fbe1ee;
+    }
+
+    .cls-16 {
+        fill: #ffefa9;
+    }
+
+    .cls-17 {
+        fill: #ef7f91;
+    }
+
+    .cls-18 {
+        fill: #ebc872;
+    }
+
+    .cls-19 {
+        fill: #e2e587;
+    }
+
+    .cls-20 {
+        fill: #ef81b2;
+    }
+
+    .cls-21 {
+        fill: #f8cce2;
+    }
+
+    .cls-22 {
+        fill: #f7c0da;
+    }
+
+    .cls-23 {
+        fill: #fad0c9;
+    }
+
+    .cls-24 {
+        fill: #f49e7f;
+    }
+
+    .cls-25 {
+        fill: #1d1d1b;
+        stroke-width: 0px;
+    }
+}

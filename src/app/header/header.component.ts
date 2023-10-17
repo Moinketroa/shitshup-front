@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NullYoutubeUser, YoutubeUser } from '../../shared/models/youtube-user.model';
-import { UserStore } from '../../shared/stores/user.store';
-import { SidebarService } from '../../shared/sidebar/sidebar.service';
+import { NullYoutubeUser, YoutubeUser } from '../shared/models/youtube-user.model';
+import { UserStore } from '../shared/stores/user.store';
+import { SidebarService } from '../shared/sidebar/sidebar.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { NotionConfigStore } from '../../shared/stores/notion-config.store';
-import { NotionConfig, NullNotionConfig } from '../../shared/models/notion-config.model';
+import { NotionConfigStore } from '../shared/stores/notion-config.store';
+import { NotionConfig, NullNotionConfig } from '../shared/models/notion-config.model';
 
 @Component({
   selector: 'shitshup-header',

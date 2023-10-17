@@ -1,6 +1,9 @@
-<router-outlet></router-outlet>
+<shitshup-header></shitshup-header>
 
-<router-outlet *ngIf="isSidebarOpen$ | async"
-               [name]="RoutingOutlet.SIDEBAR">
-</router-outlet>
+<div class="router-wrapper">
+    <router-outlet></router-outlet>
 
+    <router-outlet *ngIf="isSidebarOpen$ | async"
+                   [name]="RoutingOutlet.SIDEBAR">
+    </router-outlet>
+</div>

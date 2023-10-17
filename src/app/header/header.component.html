@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
     <span [routerLink]="'.'">Shitshup</span>
 
+    <span class="camelot-wheel-link" [routerLink]="'./camelot-wheel'">🎡</span>
+
     <div class="settings">
         <shitshup-notion-config-icon [notionConfig]="notionConfig"
                                      (click)="openNotionConfigSidebar()">

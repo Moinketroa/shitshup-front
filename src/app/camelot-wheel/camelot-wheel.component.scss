@@ -1,0 +1,63 @@
+:host {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.camelot-wheel-card {
+    width: calc(100% - (16px * 2));
+    height: calc(100% - (16px * 2));
+
+    margin: 16px;
+}
+
+.camelot-wheel-card--content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .camelot-wheel-wrapper {
+        max-width: 100%;
+        max-height: 65%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .matches-wrapper {
+        margin-top: 24px;
+
+        width: 100%;
+        max-width: 100%;
+
+        text-align: center;
+
+        .matches-wrapper--content {
+            width: 100%;
+            max-width: 100%;
+
+            display: flex;
+            justify-content: space-evenly;
+
+            margin-top: 16px;
+
+            .repitch-direction-line {
+                margin: 8px 0;
+
+                .repitch-direction {
+                    text-align: left;
+                    margin-bottom: 4px;
+
+                    .important-info {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
