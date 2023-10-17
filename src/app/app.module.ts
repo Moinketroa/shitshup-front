@@ -9,14 +9,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './shared/interceptors/token.interceptor';
 import { SocketIoModule } from 'ngx-socket-io';
 import { environment } from '../environment/environment';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NotionConfigIconModule } from './shared/components/notion-config-icon/notion-config-icon.module';
+import { YoutubeUserIconModule } from './shared/components/youtube-user-icon/youtube-user-icon.module';
 
 @NgModule({
     declarations: [
         AppComponent,
+        HeaderComponent,
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+
+        MatToolbarModule,
+
+        NotionConfigIconModule,
+        YoutubeUserIconModule,
 
         AppRoutingModule,
         HttpClientModule,

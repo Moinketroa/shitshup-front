@@ -1,0 +1,74 @@
+<mat-card class="camelot-wheel-card">
+    <mat-card-content class="camelot-wheel-card--content">
+
+        <div class="camelot-wheel-wrapper">
+
+            <shitshup-camelot-wheel-svg (activate)="onActivate($event)" (deactivate)="onDeactivate()">
+            </shitshup-camelot-wheel-svg>
+
+        </div>
+
+        <div *ngIf="matches.length !== 0" class="matches-wrapper">
+            Matches Found
+
+            <div class="matches-wrapper--content">
+                <div *ngIf="perfectMatches.length !== 0">
+                    Perfect Matches !
+
+                    <ul>
+                        <ng-container *ngFor="let perfectMatch of perfectMatches" [ngTemplateOutlet]="matchTemplate"
+                                      [ngTemplateOutletContext]="{
+                                        active: activeKeys,
+                                        match: perfectMatch,
+                                  }">
+                        </ng-container>
+                    </ul>
+                </div>
+
+                <div *ngIf="imperfectMatches.length !== 0">
+                    Imperfect Matches !
+
+                    <ul>
+                        <ng-container *ngFor="let imperfectMatch of imperfectMatches" [ngTemplateOutlet]="matchTemplate"
+                                      [ngTemplateOutletContext]="{
+                                        active: activeKeys,
+                                        match: imperfectMatch,
+                                  }">
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>
+
+<ng-template #keyTemplate let-original="original" let-shifted="shifted" let-shift="shift">
+    <div *ngIf="shift !== 0" class="repitch-direction">
+        Repitch original
+        <b class="important-info">{{ original.camelotPosition }}{{ original.mode === 1 ? 'B' : 'A' }}</b>
+        to
+        <b class="important-info">{{ shifted.camelotPosition }}{{ shifted.mode === 1 ? 'B' : 'A' }}</b>
+        by
+        <b class="important-info">{{ shift }} semitones.</b>
+    </div>
+</ng-template>
+
+<ng-template #matchTemplate let-active="active" let-match="match">
+    <li class="repitch-direction-line">
+        <ng-container [ngTemplateOutlet]="keyTemplate"
+                      [ngTemplateOutletContext]="{
+                                    original: active.first,
+                                    shifted: match.camelotKeyShiftResultPair.first.camelotKey,
+                                    shift: match.camelotKeyShiftResultPair.first.shift
+                                  }">
+        </ng-container>
+        <ng-container [ngTemplateOutlet]="keyTemplate"
+                      [ngTemplateOutletContext]="{
+                                    original: active.second,
+                                    shifted: match.camelotKeyShiftResultPair.second.camelotKey,
+                                    shift: match.camelotKeyShiftResultPair.second.shift
+                                  }">
+        </ng-container>
+    </li>
+</ng-template>
