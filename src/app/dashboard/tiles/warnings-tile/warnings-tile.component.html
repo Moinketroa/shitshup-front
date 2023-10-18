@@ -36,6 +36,9 @@
                 <th class="warnings-table--cell">
                     Warning Message
                 </th>
+                <th class="warnings-table--cell warnings-table--actions--header">
+                    Actions
+                </th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
@@ -51,6 +54,16 @@
                 </td>
                 <td class="warnings-table--cell">
                     {{ rowData.warningMessage }}
+                </td>
+                <td class="warnings-table--cell warnings-table--actions--cell">
+                    <div class="actions-wrapper">
+                        <button (click)="replayProcessing(rowData.videoId)" mat-mini-fab matTooltip="Replay" color="primary" aria-label="Replay">
+                            <mat-icon>replay</mat-icon>
+                        </button>
+                        <button mat-mini-fab matTooltip="Delete" color="warn" aria-label="Delete">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
                 </td>
             </tr>
         </ng-template>

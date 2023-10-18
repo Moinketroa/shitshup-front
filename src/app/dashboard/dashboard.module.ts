@@ -21,6 +21,7 @@ import { TreeTableModule } from 'primeng/treetable';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { WarningsTileComponent } from './tiles/warnings-tile/warnings-tile.component';
 import { TableModule } from 'primeng/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
     declarations: [
@@ -49,6 +50,7 @@ import { TableModule } from 'primeng/table';
         TreeTableModule,
         TableModule,
         MatProgressBarModule,
+        MatTooltipModule,
     ],
 })
 export class DashboardModule {

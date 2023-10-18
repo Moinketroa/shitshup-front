@@ -4,6 +4,7 @@ import { WarningService } from '../../../shared/services/warning.service';
 import { WarningTreeNodeMapperService } from '../../../shared/mapper/warning-tree-node.mapper.service';
 import { map } from 'rxjs';
 import { TreeNode } from 'primeng/api';
+import { YoutubeService } from '../../../shared/services/youtube.service';
 
 @Component({
   selector: 'shitshup-warnings-tile',
@@ -15,6 +16,7 @@ export class WarningsTileComponent implements OnInit {
     warnings: TreeNode<WarningDto>[] | null = null;
 
     constructor(private readonly warningService: WarningService,
+                private readonly youtubeService: YoutubeService,
                 private readonly warningTreeNodeMapper: WarningTreeNodeMapperService) {
 
     }
@@ -29,4 +31,8 @@ export class WarningsTileComponent implements OnInit {
             })
     }
 
+    replayProcessing(videoId: string): void {
+        this.youtubeService.replayVideoProcess(videoId)
+            .subscribe();
+    }
 }
