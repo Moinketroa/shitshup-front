@@ -26,14 +26,10 @@ export class NullYoutubePlaylist implements YoutubePlaylist {
 
 export interface YoutubeShitshupPlaylists {
     pendingPlaylist: YoutubePlaylist;
-    processedPlaylist: YoutubePlaylist;
-    waitingPlaylist: YoutubePlaylist;
 }
 
 export class NullYoutubeShitshupPlaylists implements YoutubeShitshupPlaylists {
     pendingPlaylist = new NullYoutubePlaylist();
-    processedPlaylist = new NullYoutubePlaylist();
-    waitingPlaylist = new NullYoutubePlaylist();
 }
 
 export interface YoutubePlaylistPreview {
