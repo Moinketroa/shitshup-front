@@ -14,10 +14,16 @@
 <ng-template #treeTable>
     <p-treeTable *ngIf="taskTrees" [value]="taskTrees!"
                  [scrollable]="true" scrollHeight="flex"
+                 sortField="createDate" [sortOrder]="-1"
                  styleClass="task-progress-tree-table">
         <ng-template pTemplate="header">
             <tr>
                 <th class="task-progress-tree-table--cell">Name</th>
+                <th [ttSortableColumn]="'createDate'"
+                    class="task-progress-tree-table--cell task-progress-tree-table--create-date--header">
+                    Created at
+                    <p-treeTableSortIcon [field]="'createDate'"></p-treeTableSortIcon>
+                </th>
                 <th class="task-progress-tree-table--cell task-progress-tree-table--progress--header">
                     Progress
                 </th>
@@ -28,12 +34,14 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
             <tr [ttRow]="rowNode">
-                <td class="task-progress-tree-table--cell" [colSpan]="(rowData.progress !== 1 && !rowData.hasFailed) ? 1 : 2">
+                <td class="task-progress-tree-table--cell">
                     <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
                     {{ rowData.label }}
                 </td>
-                <td *ngIf="(rowData.progress !== 1 && !rowData.hasFailed)"
-                    class="task-progress-tree-table--cell task-progress-tree-table--progress--cell">
+                <td class="task-progress-tree-table--cell task-progress-tree-table--create-date--cell">
+                    {{ rowData.createDate }}
+                </td>
+                <td class="task-progress-tree-table--cell task-progress-tree-table--progress--cell">
                     <mat-progress-bar mode="determinate" color="accent" [value]="rowData.progress * 100">
                     </mat-progress-bar>
                 </td>

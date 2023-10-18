@@ -39,6 +39,12 @@
             text-align: center;
         }
 
+        .task-progress-tree-table--create-date--header,
+        .task-progress-tree-table--create-date--cell {
+            width: 184px;
+            max-width: 184px;
+        }
+
         .task-progress-tree-table--progress--header,
         .task-progress-tree-table--progress--cell {
             width: 136px;

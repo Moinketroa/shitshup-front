@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { TaskDto } from '../dtos/task.dto';
 import { TaskTreeNode } from '../models/task-tree-node.model';
 import { isDefined } from '../util/util';
+import { DateTime } from 'luxon';
 
 @Injectable({
     providedIn: 'root',
@@ -12,6 +13,7 @@ export class TaskTreeNodeMapperService {
 
     map(task: TaskDto): TaskTreeNode {
         const taskProgress = this.calculateProgress(task);
+        const createDate = DateTime.fromISO(task.createDate).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
         let taskTreeNodeChildren: TaskTreeNode[] | undefined = undefined;
 
         if (isDefined(task.children) && task.children.length !== 0) {
@@ -31,6 +33,7 @@ export class TaskTreeNodeMapperService {
             hasFailed: task.hasFailed,
             progress: taskProgress,
             parentId: task.parentId,
+            createDate: createDate,
         }
 
         taskTreeNode.data = taskTreeNode;

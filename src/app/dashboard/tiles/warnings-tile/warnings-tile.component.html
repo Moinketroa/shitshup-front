@@ -18,6 +18,7 @@
 <ng-template #tableWithData>
     <p-treeTable *ngIf="warnings" [value]="warnings!"
                  [scrollable]="true" scrollHeight="flex"
+                 sortField="createDate" [sortOrder]="-1"
                  styleClass="warnings-table">
         <ng-template pTemplate="header">
             <tr>
@@ -26,6 +27,11 @@
                 </th>
                 <th class="warnings-table--cell warnings-table--video-id--header">
                     Video ID
+                </th>
+                <th [ttSortableColumn]="'createDate'"
+                    class="warnings-table--cell warnings-table--create-date--header">
+                    Created at
+                    <p-treeTableSortIcon [field]="'createDate'"></p-treeTableSortIcon>
                 </th>
                 <th class="warnings-table--cell">
                     Warning Message
@@ -39,6 +45,9 @@
                 </td>
                 <td class="warnings-table--cell warnings-table--video-id--cell">
                     {{ rowData.videoId }}
+                </td>
+                <td class="warnings-table--cell warnings-table--create-date--cell">
+                    {{ rowData.createDate }}
                 </td>
                 <td class="warnings-table--cell">
                     {{ rowData.warningMessage }}
