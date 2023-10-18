@@ -60,7 +60,7 @@
                         <button (click)="replayProcessing(rowData.videoId)" mat-mini-fab matTooltip="Replay" color="primary" aria-label="Replay">
                             <mat-icon>replay</mat-icon>
                         </button>
-                        <button mat-mini-fab matTooltip="Delete" color="warn" aria-label="Delete">
+                        <button (click)="deleteWarning(rowData.id)" mat-mini-fab matTooltip="Delete" color="warn" aria-label="Delete">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>

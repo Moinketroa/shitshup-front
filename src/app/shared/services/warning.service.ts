@@ -19,4 +19,8 @@ export class WarningService {
         return this.http.get<WarningDto[]>(`${ this.baseUrl }/${ this.path }`);
     }
 
+    deleteWarning(warningId: string): Observable<void> {
+        return this.http.delete<void>(`${ this.baseUrl }/${ this.path }/${ warningId }`)
+    }
+
 }

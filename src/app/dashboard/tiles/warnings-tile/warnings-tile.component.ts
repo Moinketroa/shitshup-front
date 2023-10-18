@@ -22,17 +22,28 @@ export class WarningsTileComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.initWarnings();
+    }
+
+    initWarnings(): void {
         this.warningService.getWarnings()
             .pipe(
                 map(warnings => warnings.map(warning => this.warningTreeNodeMapper.map(warning)))
             )
             .subscribe(warnings => {
                 this.warnings = warnings;
-            })
+            });
     }
 
     replayProcessing(videoId: string): void {
         this.youtubeService.replayVideoProcess(videoId)
             .subscribe();
+    }
+
+    deleteWarning(warningId: string): void {
+        this.warningService.deleteWarning(warningId)
+            .subscribe(() => {
+                this.initWarnings();
+            });
     }
 }
