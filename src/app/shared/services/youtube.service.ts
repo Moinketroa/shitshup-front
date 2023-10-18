@@ -58,4 +58,10 @@ export class YoutubeService {
 
         return this.http.get(`${this.baseUrl}/${this.path}/${endPoint}`);
     }
+
+    replayVideoProcess(videoId: string): Observable<any> {
+        const endPoint = `process/video/${videoId}`;
+
+        return this.http.get(`${this.baseUrl}/${this.path}/${endPoint}`);
+    }
 }

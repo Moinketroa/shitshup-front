@@ -55,6 +55,22 @@
             width: 184px;
             max-width: 184px;
         }
+
+        .warnings-table--actions--header {
+            text-align: center;
+        }
+
+        .warnings-table--actions--header,
+        .warnings-table--actions--cell {
+            width: 136px;
+            max-width: 136px;
+
+            .actions-wrapper {
+                margin: 0 8px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
 
     .p-treetable-scrollable-header-box {
