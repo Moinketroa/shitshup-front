@@ -30,6 +30,9 @@
                 <th class="task-progress-tree-table--cell task-progress-tree-table--status--header">
                     Status
                 </th>
+                <th class="task-progress-tree-table--cell task-progress-tree-table--actions--header">
+                    Actions
+                </th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
@@ -53,6 +56,14 @@
                                   }">
                     </ng-container>
                 </td>
+                <td class="task-progress-tree-table--cell task-progress-tree-table--actions--cell">
+                    <button (click)="deleteTask(rowData.id)"
+                            [disabled]="!(rowData.hasFailed || rowData.progress >= 1)"
+                            mat-mini-fab matTooltip="Delete" color="warn"
+                            aria-label="Delete">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
             </tr>
         </ng-template>
     </p-treeTable>
@@ -64,7 +75,7 @@
     </ng-template>
 
     <ng-template #nominalStatus>
-        <ng-template [ngIf]="progress === 1" [ngIfElse]="inProgress">
+        <ng-template [ngIf]="progress >= 1" [ngIfElse]="inProgress">
             <mat-icon class="done-icon">done</mat-icon>
         </ng-template>
 

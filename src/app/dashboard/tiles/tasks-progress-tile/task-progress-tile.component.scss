@@ -50,6 +50,13 @@
             width: 136px;
             max-width: 136px !important;
         }
+
+        .task-progress-tree-table--actions--header,
+        .task-progress-tree-table--actions--cell {
+            width: 80px;
+            max-width: 80px !important;
+            text-align: center;
+        }
     }
 
     .p-treetable-scrollable-header-box {

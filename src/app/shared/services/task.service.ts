@@ -18,4 +18,8 @@ export class TaskService {
     getTasks(): Observable<TaskDto[]> {
         return this.http.get<TaskDto[]>(`${ this.baseUrl }/${ this.path }`);
     }
+
+    deleteTask(taskId: string): Observable<void> {
+        return this.http.delete<void>(`${ this.baseUrl }/${ this.path }/${ taskId }`);
+    }
 }

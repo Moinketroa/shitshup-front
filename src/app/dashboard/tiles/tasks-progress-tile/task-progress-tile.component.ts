@@ -23,6 +23,17 @@ export class TaskProgressTileComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loadTasks();
+    }
+
+    deleteTask(taskId: string) {
+        this.taskService.deleteTask(taskId)
+            .subscribe(() => {
+                this.loadTasks();
+            })
+    }
+
+    loadTasks(): void {
         this.taskService.getTasks()
             .pipe(
                 map(taskTree => (
@@ -42,7 +53,7 @@ export class TaskProgressTileComponent implements OnInit {
             });
     }
 
-    loadData(): void {
+    forceLoadData(): void {
         const temp = this.taskTrees;
         this.taskTrees = null;
         setTimeout(() => this.taskTrees = temp, 0);
@@ -54,7 +65,7 @@ export class TaskProgressTileComponent implements OnInit {
         if (isNullOrUndefined(taskTreeNodeFound)) {
             if (isNullOrUndefined(taskTreeNodeUpdate.parentId)) {
                 this.taskTrees?.push(taskTreeNodeUpdate);
-                this.loadData();
+                this.forceLoadData();
             } else {
                 const taskTreeNodeUpdateParentFound = this.findTaskTreeNode(taskTreeNodeUpdate.parentId)!;
 
