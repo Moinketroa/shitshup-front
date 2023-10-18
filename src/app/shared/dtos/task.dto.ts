@@ -6,4 +6,5 @@ export interface TaskDto {
     hasFailed: boolean;
     children: TaskDto[];
     parentId: string;
+    createDate: string;
 }

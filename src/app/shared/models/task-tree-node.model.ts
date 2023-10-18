@@ -5,4 +5,5 @@ export interface TaskTreeNode extends TreeNode {
     progress: number;
     hasFailed: boolean;
     parentId: string;
+    createDate: string;
 }
