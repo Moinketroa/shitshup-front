@@ -1,0 +1,32 @@
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.process-one-video-card {
+    width: 100%;
+    height: 100%;
+
+    .process-one-video-card--title {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .process-one-video-card--content {
+        .process-one-video-card--content--process-form {
+            height: 100%;
+            width: 100%;
+            margin: 6px 0;
+            display: flex;
+            flex-direction: row;
+
+            .process-one-video-card--content--process-input {
+                width: calc(100% - 64px);
+            }
+
+            .process-one-video-card--process-button {
+                margin-left: auto;
+            }
+        }
+    }
+}

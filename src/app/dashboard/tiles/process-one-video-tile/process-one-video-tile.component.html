@@ -1,0 +1,23 @@
+<mat-card class="process-one-video-card">
+    <mat-card-header>
+        <mat-card-title class="process-one-video-card--title">
+            Process Only One Video
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="process-one-video-card--content">
+        <div class="process-one-video-card--content--process-form">
+            <mat-form-field class="process-one-video-card--content--process-input">
+                <mat-label>YouTube Video URL or ID</mat-label>
+                <input matInput placeholder="https://www.youtube.com/watch?v=..." [formControl]="youtubeUrlOrIdControl">
+                <mat-error *ngIf="youtubeUrlOrIdControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <button mat-fab color="primary" [disabled]="youtubeUrlOrIdControl.invalid"
+                    (click)="processOneVideo()"
+                    class="process-one-video-card--process-button">
+                <mat-icon>download</mat-icon>
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

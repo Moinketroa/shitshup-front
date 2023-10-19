@@ -36,7 +36,7 @@ export class WarningsTileComponent implements OnInit {
     }
 
     replayProcessing(videoId: string): void {
-        this.youtubeService.replayVideoProcess(videoId)
+        this.youtubeService.processOneVideo(videoId)
             .subscribe();
     }
 

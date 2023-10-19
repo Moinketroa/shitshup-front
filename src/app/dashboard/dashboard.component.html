@@ -1,22 +1,26 @@
 <div class="dashboard--wrapper">
-    <mat-grid-list cols="8" rowHeight="256px" gutterSize="16px" class="dashboard--tile-list">
-        <mat-grid-tile colspan="8" rowspan="1" *ngIf="showPrerequisites" class="dashboard-prerequisites--tile">
+    <mat-grid-list cols="8" rowHeight="128px" gutterSize="16px" class="dashboard--tile-list">
+        <mat-grid-tile colspan="8" rowspan="1" *ngIf="showProcessOneVideo" class="dashboard-warnings--tile">
+            <shitshup-process-one-video-tile></shitshup-process-one-video-tile>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="8" rowspan="2" *ngIf="showPrerequisites" class="dashboard-prerequisites--tile">
             <shitshup-prerequisites-tile>
                 <shitshup-notion-prerequisite *ngIf="showNotionPrerequisite"></shitshup-notion-prerequisite>
                 <shitshup-youtube-prerequisite *ngIf="showYoutubePrerequisite"></shitshup-youtube-prerequisite>
             </shitshup-prerequisites-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="8" rowspan="1" *ngIf="showProcessPendings" class="dashboard-process-pending--tile">
+        <mat-grid-tile colspan="8" rowspan="2" *ngIf="showProcessPendings" class="dashboard-process-pending--tile">
             <shitshup-process-pendings-tile [pendingPlaylistPreview]="pendingPlaylistPreview">
             </shitshup-process-pendings-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="8" rowspan="2" *ngIf="showWarnings" class="dashboard-warnings--tile">
+        <mat-grid-tile colspan="8" rowspan="4" *ngIf="showWarnings" class="dashboard-warnings--tile">
             <shitshup-warnings-tile></shitshup-warnings-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="8" rowspan="2" *ngIf="showTaskProgress" class="dashboard-task-progress--tile">
+        <mat-grid-tile colspan="8" rowspan="4" *ngIf="showTaskProgress" class="dashboard-task-progress--tile">
             <shitshup-task-progress-tile></shitshup-task-progress-tile>
         </mat-grid-tile>
     </mat-grid-list>
