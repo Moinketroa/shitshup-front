@@ -1,4 +1,5 @@
 export const environment = {
     apiUrl: 'http://localhost:3000',
-    socketUrl: 'localhost:81'
+    taskNotificationSocketUrl: 'localhost:81',
+    warningNotificationSocketUrl: 'localhost:82',
 }
