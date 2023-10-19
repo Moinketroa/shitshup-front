@@ -53,7 +53,7 @@ export class TaskProgressTileComponent implements OnInit {
             });
     }
 
-    forceLoadData(): void {
+    private forceLoadData(): void {
         const temp = this.taskTrees;
         this.taskTrees = null;
         setTimeout(() => this.taskTrees = temp, 0);
@@ -74,6 +74,7 @@ export class TaskProgressTileComponent implements OnInit {
                 }
 
                 taskTreeNodeUpdateParentFound.children?.push(taskTreeNodeUpdate);
+                this.forceLoadData();
             }
         } else {
             taskTreeNodeFound.progress = taskTreeNodeUpdate.progress;
