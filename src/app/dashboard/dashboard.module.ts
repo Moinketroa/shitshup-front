@@ -22,6 +22,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { WarningsTileComponent } from './tiles/warnings-tile/warnings-tile.component';
 import { TableModule } from 'primeng/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ProcessOneVideoTileComponent } from './tiles/process-one-video-tile/process-one-video-tile.component';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -32,6 +35,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         ProcessPendingsTileComponent,
         TaskProgressTileComponent,
         WarningsTileComponent,
+        ProcessOneVideoTileComponent,
     ],
     imports: [
         CommonModule,
@@ -51,6 +55,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         TableModule,
         MatProgressBarModule,
         MatTooltipModule,
+        MatInputModule,
+        ReactiveFormsModule,
     ],
 })
 export class DashboardModule {
