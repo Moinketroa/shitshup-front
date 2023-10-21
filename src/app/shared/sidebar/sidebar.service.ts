@@ -34,6 +34,10 @@ export class SidebarService {
         this.openSidebar(SidebarPath.NOTION);
     }
 
+    openDropboxConfig(): void {
+        this.openSidebar(SidebarPath.DROPBOX);
+    }
+
     private openSidebar(path: SidebarPath) {
         this.router.navigate([
             {

@@ -1,0 +1,36 @@
+.sidebar-header {
+    display: flex;
+    flex-direction: row;
+
+    .dropbox-icon {
+        width: 48px;
+        height: 48px;
+        margin: 8px;
+
+        background-image: url('../../../../assets/dropbox.svg');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .header-title {
+        align-self: center;
+    }
+}
+
+.welcome,
+.error-details {
+    margin: 8px 0 16px 0;
+    text-align: center;
+}
+
+.error-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+}
+
+.mat-mdc-list-item {
+    margin-bottom: 16px;
+}

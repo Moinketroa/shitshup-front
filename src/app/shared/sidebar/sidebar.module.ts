@@ -16,6 +16,8 @@ import { MatListModule } from '@angular/material/list';
 import { CreateNotionConfigSectionComponent } from './sidebar-notion-config/create-notion-config-section/create-notion-config-section.component';
 import { UpdateNotionConfigSectionComponent } from './sidebar-notion-config/update-notion-config-section/update-notion-config-section.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SidebarDropboxConfigComponent } from './sidebar-dropbox-config/sidebar-dropbox-config.component';
+import { DropboxUserIconModule } from '../components/dropbox-user-icon/dropbox-user-icon.module';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         SidebarNotionConfigComponent,
         CreateNotionConfigSectionComponent,
         UpdateNotionConfigSectionComponent,
+        SidebarDropboxConfigComponent,
     ],
     imports: [
         CommonModule,
@@ -41,6 +44,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatInputModule,
         MatListModule,
         MatCheckboxModule,
+        DropboxUserIconModule,
     ],
     exports: [
         SidebarComponent,
