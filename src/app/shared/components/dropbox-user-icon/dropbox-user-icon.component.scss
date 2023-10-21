@@ -1,14 +1,14 @@
-.notion-config-icon-btn,
-.no-notion-config-btn {
+.dropbox-user-icon-btn,
+.no-dropbox-user-btn {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-image: url('../../../../assets/notion-logo.svg');
+    background-image: url('../../../../assets/dropbox.svg');
 }
 
-.notion-config-settings-badge,
-.no-notion-config-settings-badge {
+.dropbox-config-settings-badge,
+.no-dropbox-user-alert-badge {
     display: flex;
     position: absolute;
     bottom: 0;
@@ -28,18 +28,18 @@
     }
 }
 
-.notion-config-icon-btn {
+.dropbox-user-icon-btn {
 
-    .notion-config-settings-badge {
+    .dropbox-config-settings-badge {
         background-color: green;
     }
 
 }
 
-.no-notion-config-btn {
+.no-dropbox-user-btn {
     outline: red solid 2px;
 
-    .no-notion-config-settings-badge {
+    .no-dropbox-user-alert-badge {
         background-color: red;
     }
 }

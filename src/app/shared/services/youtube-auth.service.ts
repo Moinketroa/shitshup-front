@@ -3,10 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { NullYoutubeUser, YoutubeUser } from '../models/youtube-user.model';
 import { catchError, map, Observable, of } from 'rxjs';
 import { environment } from '../../../environment/environment';
-
-interface UrlWrapper {
-    url: string
-}
+import { UrlWrapper } from '../models/url-wrapper.model';
 
 @Injectable({
     providedIn: 'root',
@@ -16,7 +13,7 @@ export class YoutubeAuthService {
     private readonly baseUrl = environment.apiUrl;
     private readonly path: string = 'auth'
 
-    constructor(private http: HttpClient) {
+    constructor(private readonly http: HttpClient) {
     }
 
     getGeneratedAuthUrl(): Observable<string> {

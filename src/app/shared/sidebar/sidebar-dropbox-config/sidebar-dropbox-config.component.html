@@ -1,0 +1,24 @@
+<shitshup-sidebar>
+    <div sidebar-header class="sidebar-header">
+        <div class="dropbox-icon"></div>
+
+        <span class="header-title">Dropbox Config</span>
+    </div>
+
+    <ng-template [ngIf]="!(dropboxUser.id)" [ngIfElse]="alreadyLoggedIn">
+        <mat-icon class="error-icon">warning</mat-icon>
+
+        <span class="error-details">You haven't linked any Dropbox account.</span>
+
+        <button mat-flat-button class="login" (click)="auth()">Continue with Dropbox</button>
+    </ng-template>
+
+    <ng-template #alreadyLoggedIn>
+        <shitshup-dropbox-user-icon [dropboxUser]="dropboxUser"></shitshup-dropbox-user-icon>
+
+        <span class="welcome">Hi, {{ dropboxUser.displayName }} !</span>
+
+        <button class="logout" mat-flat-button (click)="logout()">Logout</button>
+    </ng-template>
+
+</shitshup-sidebar>

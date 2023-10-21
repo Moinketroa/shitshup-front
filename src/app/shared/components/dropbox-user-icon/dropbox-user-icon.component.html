@@ -1,0 +1,20 @@
+<button *ngIf="dropboxUser.id; else noDropboxUser"
+        mat-icon-button
+        class="dropbox-user-icon-btn"
+        aria-label="Dropbox User Icon"
+        (click)="click.emit()">
+    <div class="dropbox-config-settings-badge">
+        <mat-icon>settings</mat-icon>
+    </div>
+</button>
+
+<ng-template #noDropboxUser>
+    <button mat-icon-button
+            class="no-dropbox-user-btn"
+            aria-label="No Dropbox User"
+            (click)="click.emit()">
+        <div class="no-dropbox-user-alert-badge">
+            <mat-icon>priority_high</mat-icon>
+        </div>
+    </button>
+</ng-template>

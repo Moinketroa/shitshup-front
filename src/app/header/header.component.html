@@ -4,9 +4,16 @@
     <span class="camelot-wheel-link" [routerLink]="'./camelot-wheel'">🎡</span>
 
     <div class="settings">
-        <shitshup-notion-config-icon [notionConfig]="notionConfig"
+        <shitshup-notion-config-icon *ngIf="showNotionAndDropbox"
+                                     [notionConfig]="notionConfig"
                                      (click)="openNotionConfigSidebar()">
         </shitshup-notion-config-icon>
+
+        <shitshup-dropbox-user-icon *ngIf="showNotionAndDropbox"
+                                    [dropboxUser]="drobpoxUser"
+                                    (click)="openDropboxAuthSidebar()">
+
+        </shitshup-dropbox-user-icon>
 
         <shitshup-youtube-user-icon [youtubeUser]="youtubeUser"
                                     (click)="openYoutubeAuthSidebar()">

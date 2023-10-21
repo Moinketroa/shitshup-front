@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NotionConfigIconModule } from './shared/components/notion-config-icon/notion-config-icon.module';
 import { YoutubeUserIconModule } from './shared/components/youtube-user-icon/youtube-user-icon.module';
+import { DropboxUserIconModule } from './shared/components/dropbox-user-icon/dropbox-user-icon.module';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { YoutubeUserIconModule } from './shared/components/youtube-user-icon/you
         MatToolbarModule,
 
         NotionConfigIconModule,
+        DropboxUserIconModule,
         YoutubeUserIconModule,
 
         AppRoutingModule,
