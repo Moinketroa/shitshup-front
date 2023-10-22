@@ -1,6 +1,6 @@
 @mixin section($section-number, $section-mode) {
     #section-#{$section-number}-#{$section-mode} {
-        pointer-events: bounding-box;
+        pointer-events: visiblePainted;
     }
 
     #section-#{$section-number}-#{$section-mode}:hover,
@@ -8,6 +8,7 @@
         [id^='section-'] {
             stroke: white;
             filter: drop-shadow( 0 0 40px #FFFFFFAF);
+            cursor: pointer;
         }
     }
 }
