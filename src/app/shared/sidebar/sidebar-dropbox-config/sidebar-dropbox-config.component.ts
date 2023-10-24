@@ -43,7 +43,10 @@ export class SidebarDropboxConfigComponent implements OnInit{
     }
 
     logout() {
-
+        this.dropboxAuthService.logout()
+            .subscribe(() => {
+                this.updateDropboxUserCallback();
+            });
     }
 
 }

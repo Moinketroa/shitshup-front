@@ -46,4 +46,10 @@ export class DropboxAuthService {
                 }),
             );
     }
+
+    logout(): Observable<DropboxUser> {
+        const endPoint = 'dropbox/logout';
+
+        return this.http.get<DropboxUser>(`${ this.baseUrl }/${ this.path }/${ endPoint }`);
+    }
 }
