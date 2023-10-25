@@ -13,8 +13,20 @@
 }
 
 .router-wrapper {
-    height: calc(100% - 64px);
-    max-height: calc(100% - 64px);
+    height: calc(100% - (64px + 32px));
+    max-height: calc(100% - (64px + 32px));
     width: 100%;
     max-width: 100%;
+}
+
+.footer {
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: $panel-color;
+
+    font-family: Roboto, sans-serif;
 }

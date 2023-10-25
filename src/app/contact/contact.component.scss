@@ -1,0 +1,54 @@
+:host {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+.about-me-card {
+    margin: 64px;
+}
+
+.about-me-avatar {
+    background-image: url('../../assets/about_me_avatar.png');
+    background-size: contain;
+    height: 64px;
+    width: 64px;
+}
+
+.about-me-content {
+    margin-bottom: 16px;
+}
+
+.about-me-social {
+    justify-content: end;
+    gap: 16px;
+    padding: 16px;
+
+    .linkedin-logo-white {
+        background-image: url('../../assets/linkedin-white.svg');
+        background-size: cover;
+        height: 28px;
+        width: 28px;
+    }
+
+    .youtube-logo-white {
+        background-image: url('../../assets/youtube-white.svg');
+        background-size: cover;
+        height: 28px;
+        width: 40px;
+    }
+
+    .soundcloud-logo-white {
+        background-image: url('../../assets/soundcloud-white.svg');
+        background-size: cover;
+        height: 16px;
+        width: 38px;
+    }
+
+    .github-logo-white {
+        background-image: url('../../assets/github-white.svg');
+        background-size: cover;
+        height: 35px;
+        width: 36px;
+    }
+}

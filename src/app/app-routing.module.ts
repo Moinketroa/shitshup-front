@@ -11,6 +11,10 @@ const routes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
     },
     {
+        path: 'contact',
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
+    },
+    {
         path: 'camelot-wheel',
         loadChildren: () => import('./camelot-wheel/camelot-wheel.module').then(m => m.CamelotWheelModule),
     },
