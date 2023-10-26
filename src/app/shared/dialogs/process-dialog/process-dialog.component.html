@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Process videos</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Please select the steps you want to include in the process</h3>
+
+    <div class="step-selection" [formGroup]="stepsSelected">
+
+        <div *ngIf="!processOneVideo">
+            <mat-checkbox formControlName="step1">
+                Step 1 : Get Playlist video IDs and check for explicit duplicates
+            </mat-checkbox>
+
+            <div class="step1-deps">
+                <mat-checkbox formControlName="step1Explicit">
+                    Step 1 : Remove explicit duplicates from Pending Playlist
+                </mat-checkbox>
+            </div>
+        </div>
+
+        <mat-checkbox formControlName="step2">
+            Step 2 : Download Videos
+        </mat-checkbox>
+
+        <mat-checkbox *ngIf="!processOneVideo" formControlName="step3">
+            Step 3 : Delete Videos from Pending Playlist
+        </mat-checkbox>
+
+        <mat-checkbox formControlName="step4" (change)="step4Change($event.checked)">
+            Step 4 : Perform Essentia analysis (requires shitshup-essentia)
+        </mat-checkbox>
+
+        <div class="step4-deps">
+            <mat-checkbox formControlName="step5" (change)="step5Change($event.checked)">
+                Step 5 : Push analysis results to Notion (requires Notion)
+            </mat-checkbox>
+
+            <div class="step5-deps">
+                <mat-checkbox formControlName="step7" (change)="step7Change($event.checked)">
+                    Step 7 : Upload to Dropbox and link music to Notion (requires Dropbox)
+                </mat-checkbox>
+            </div>
+
+            <mat-checkbox formControlName="step6">
+                Step 6 : Predict stems (requires shitshup-essentia)
+            </mat-checkbox>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close (click)="cancel()">CANCEL</button>
+    <button mat-button cdkFocusInitial (click)="process()">PROCESS</button>
+</mat-dialog-actions>

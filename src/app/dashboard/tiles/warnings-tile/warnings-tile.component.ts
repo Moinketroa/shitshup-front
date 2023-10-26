@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { WarningDto } from '../../../shared/dtos/warning.dto';
 import { WarningService } from '../../../shared/services/warning.service';
 import { WarningTreeNodeMapperService } from '../../../shared/mapper/warning-tree-node.mapper.service';
-import { concat, map } from 'rxjs';
+import { concat, filter, map, switchMap } from 'rxjs';
 import { TreeNode } from 'primeng/api';
 import { YoutubeService } from '../../../shared/services/youtube.service';
 import {
     WarningNotificationWsService,
 } from '../../../shared/web-sockets/warning-notification/warning-notification.ws.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ProcessDialogComponent } from '../../../shared/dialogs/process-dialog/process-dialog.component';
 
 @Component({
     selector: 'shitshup-warnings-tile',
@@ -21,6 +23,7 @@ export class WarningsTileComponent implements OnInit {
     constructor(private readonly warningService: WarningService,
                 private readonly warningNotificationWsService: WarningNotificationWsService,
                 private readonly youtubeService: YoutubeService,
+                private readonly dialog: MatDialog,
                 private readonly warningTreeNodeMapper: WarningTreeNodeMapperService) {
 
     }
@@ -60,7 +63,15 @@ export class WarningsTileComponent implements OnInit {
     }
 
     replayProcessing(videoId: string): void {
-        this.youtubeService.processOneVideo(videoId)
+        const dialogRef = this.dialog.open(ProcessDialogComponent, {
+            data: { processOneVideo: true, uniqueVideoId: videoId },
+        });
+
+        dialogRef.afterClosed()
+            .pipe(
+                filter(result => !!result),
+                switchMap(result => this.youtubeService.processVideos(result))
+            )
             .subscribe();
     }
 

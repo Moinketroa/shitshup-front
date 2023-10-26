@@ -1,0 +1,10 @@
+.step-selection {
+    display: flex;
+    flex-direction: column;
+
+    .step1-deps,
+    .step4-deps,
+    .step5-deps {
+        margin-left: 32px;
+    }
+}

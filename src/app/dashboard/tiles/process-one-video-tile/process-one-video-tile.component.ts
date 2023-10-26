@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { isNullOrUndefined } from '../../../shared/util/util';
 import { YoutubeService } from '../../../shared/services/youtube.service';
+import { ProcessDialogComponent } from '../../../shared/dialogs/process-dialog/process-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { filter, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'shitshup-process-one-video-tile',
@@ -17,7 +20,8 @@ export class ProcessOneVideoTileComponent {
         [Validators.pattern(this.YOUTUBE_URL_OR_ID_REGEX)],
     );
 
-    constructor(private readonly youtubeService: YoutubeService) {
+    constructor(private readonly youtubeService: YoutubeService,
+                private readonly dialog: MatDialog,) {
     }
 
     getErrorMessage(): string {
@@ -30,10 +34,17 @@ export class ProcessOneVideoTileComponent {
         if (isNullOrUndefined(videoUrlOrId) || videoUrlOrId.trim() === '') {
             return;
         } else {
-            this.youtubeService.processOneVideo(videoUrlOrId.slice(-11))
-                .subscribe(() => {
-                    this.youtubeUrlOrIdControl.reset();
-                })
+            const dialogRef = this.dialog.open(ProcessDialogComponent, {
+                data: { processOneVideo: true, uniqueVideoId: videoUrlOrId.slice(-11) },
+            });
+
+            dialogRef.afterClosed()
+                .pipe(
+                    filter(result => !!result),
+                    tap(() => (this.youtubeUrlOrIdControl.reset())),
+                    switchMap(result => this.youtubeService.processVideos(result))
+                )
+                .subscribe();
         }
     }
 }
