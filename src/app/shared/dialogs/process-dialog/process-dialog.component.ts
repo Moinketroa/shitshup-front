@@ -62,22 +62,22 @@ export class ProcessDialogComponent implements OnInit {
             doDeleteFromPending: rawValue.step3,
             doFetchMusicAnalysisData: rawValue.step4,
             doPushResultsToNotion: rawValue.step5,
-            doPredictStems: rawValue.step6,
-            doLinkNotionToDropbox: rawValue.step7,
+            doLinkNotionToDropbox: rawValue.step6,
+            doPredictStems: rawValue.step7,
         }
 
         this.dialogRef.close(processRequest);
     }
 
     step4Change(checked: boolean) {
-        this.manageDeps(checked, 'step5', 'step7');
+        this.manageDeps(checked, 'step5', 'step6');
     }
 
     step5Change(checked: boolean) {
-        this.manageDeps(checked, 'step7');
+        this.manageDeps(checked, 'step6');
     }
 
-    step7Change(checked: boolean) {
+    step6Change(checked: boolean) {
         if (checked) {
             this.stepsSelected.get('step5')?.setValue(true);
         }
