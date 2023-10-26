@@ -70,7 +70,7 @@ export class ProcessDialogComponent implements OnInit {
     }
 
     step4Change(checked: boolean) {
-        this.manageDeps(checked, 'step5', 'step6', 'step7');
+        this.manageDeps(checked, 'step5', 'step7');
     }
 
     step5Change(checked: boolean) {
