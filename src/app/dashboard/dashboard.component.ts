@@ -19,6 +19,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 @UntilDestroy()
 export class DashboardComponent implements OnInit {
 
+    showWelcome: boolean = true;
+
     showPrerequisites: boolean = false;
     showNotionPrerequisite: boolean = false;
     showYoutubePrerequisite: boolean = false;
@@ -74,6 +76,7 @@ export class DashboardComponent implements OnInit {
 
         this.userStore.youtubeUser$
             .subscribe(youtubeUser => {
+                this.showWelcome = !youtubeUser.id;
                 this.showWarnings = !!youtubeUser.id;
                 this.showTaskProgress = !!youtubeUser.id;
                 this.showProcessOneVideo = !!youtubeUser.id;

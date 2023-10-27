@@ -1,5 +1,7 @@
 <div class="dashboard--wrapper">
-    <mat-grid-list cols="8" rowHeight="128px" gutterSize="16px" class="dashboard--tile-list">
+    <shitshup-welcome *ngIf="showWelcome"></shitshup-welcome>
+
+    <mat-grid-list *ngIf="!showWelcome" cols="8" rowHeight="128px" gutterSize="16px" class="dashboard--tile-list">
         <mat-grid-tile colspan="8" rowspan="1" *ngIf="showProcessOneVideo" class="dashboard-warnings--tile">
             <shitshup-process-one-video-tile></shitshup-process-one-video-tile>
         </mat-grid-tile>
