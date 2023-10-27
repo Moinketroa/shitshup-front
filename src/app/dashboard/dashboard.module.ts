@@ -25,6 +25,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ProcessOneVideoTileComponent } from './tiles/process-one-video-tile/process-one-video-tile.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         TaskProgressTileComponent,
         WarningsTileComponent,
         ProcessOneVideoTileComponent,
+        WelcomeComponent,
     ],
     imports: [
         CommonModule,
