@@ -4,6 +4,7 @@ import { YoutubeService } from '../../../shared/services/youtube.service';
 import { ProcessDialogComponent } from '../../../shared/dialogs/process-dialog/process-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { filter, switchMap } from 'rxjs';
+import { ProcessService } from '../../../shared/services/process.service';
 
 @Component({
   selector: 'shitshup-process-pendings-tile',
@@ -15,7 +16,7 @@ export class ProcessPendingsTileComponent {
     @Input()
     pendingPlaylistPreview: YoutubePlaylistPreview = new NullYoutubePlaylistPreview();
 
-    constructor(private readonly youtubeService: YoutubeService,
+    constructor(private readonly processService: ProcessService,
                 private readonly dialog: MatDialog,) {
     }
 
@@ -27,7 +28,7 @@ export class ProcessPendingsTileComponent {
         dialogRef.afterClosed()
             .pipe(
                 filter(result => !!result),
-                switchMap(result => this.youtubeService.processVideos(result))
+                switchMap(result => this.processService.triggerProcess(result))
             )
             .subscribe();
     }

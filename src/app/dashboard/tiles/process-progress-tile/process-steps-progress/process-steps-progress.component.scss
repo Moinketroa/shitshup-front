@@ -1,0 +1,36 @@
+@import "../../../../../assets/styles/colors";
+
+:host {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.step-description {
+
+    .status-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+
+        .not-started-icon {
+
+        }
+    }
+
+}
+
+.step-separator {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    .step-separator-content {
+        position: absolute;
+        background-color: $table-divider;
+
+        height: 1px;
+        width: 80px;
+
+        translate: -50%;
+    }
+}

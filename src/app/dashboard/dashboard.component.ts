@@ -24,9 +24,8 @@ export class DashboardComponent implements OnInit {
     showPrerequisites: boolean = false;
     showNotionPrerequisite: boolean = false;
     showYoutubePrerequisite: boolean = false;
-    showTaskProgress: boolean = false;
-    showWarnings: boolean = false;
     showProcessOneVideo: boolean = false;
+    showProcessProgress: boolean = false;
 
     showProcessPendings: boolean = false;
     pendingPlaylistPreview: YoutubePlaylistPreview = new NullYoutubePlaylistPreview();
@@ -77,9 +76,8 @@ export class DashboardComponent implements OnInit {
         this.userStore.youtubeUser$
             .subscribe(youtubeUser => {
                 this.showWelcome = !youtubeUser.id;
-                this.showWarnings = !!youtubeUser.id;
-                this.showTaskProgress = !!youtubeUser.id;
                 this.showProcessOneVideo = !!youtubeUser.id;
+                this.showProcessProgress = !!youtubeUser.id;
             })
     }
 
