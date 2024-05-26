@@ -16,16 +16,16 @@ import { NotionPrerequisiteComponent } from './tiles/prerequisites-tile/notion-p
 import { YoutubePrerequisiteComponent } from './tiles/prerequisites-tile/youtube-prerequisite/youtube-prerequisite.component';
 import { ProcessPendingsTileComponent } from './tiles/process-pendings-tile/process-pendings-tile.component';
 import { PlaylistItemsTitlesPreviewPipe } from '../shared/pipes/playlist-items-titles-preview.pipe';
-import { TaskProgressTileComponent } from './tiles/tasks-progress-tile/task-progress-tile.component';
 import { TreeTableModule } from 'primeng/treetable';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { WarningsTileComponent } from './tiles/warnings-tile/warnings-tile.component';
 import { TableModule } from 'primeng/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ProcessOneVideoTileComponent } from './tiles/process-one-video-tile/process-one-video-tile.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ProcessProgressTileComponent } from './tiles/process-progress-tile/process-progress-tile.component';
+import { ProcessStepsProgressComponent } from './tiles/process-progress-tile/process-steps-progress/process-steps-progress.component';
 
 @NgModule({
     declarations: [
@@ -34,10 +34,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
         NotionPrerequisiteComponent,
         YoutubePrerequisiteComponent,
         ProcessPendingsTileComponent,
-        TaskProgressTileComponent,
-        WarningsTileComponent,
         ProcessOneVideoTileComponent,
         WelcomeComponent,
+        ProcessProgressTileComponent,
+        ProcessStepsProgressComponent,
     ],
     imports: [
         CommonModule,

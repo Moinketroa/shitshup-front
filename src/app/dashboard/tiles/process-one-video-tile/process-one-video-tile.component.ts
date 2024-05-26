@@ -5,6 +5,7 @@ import { YoutubeService } from '../../../shared/services/youtube.service';
 import { ProcessDialogComponent } from '../../../shared/dialogs/process-dialog/process-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { filter, switchMap, tap } from 'rxjs';
+import { ProcessService } from '../../../shared/services/process.service';
 
 @Component({
   selector: 'shitshup-process-one-video-tile',
@@ -20,7 +21,7 @@ export class ProcessOneVideoTileComponent {
         [Validators.pattern(this.YOUTUBE_URL_OR_ID_REGEX)],
     );
 
-    constructor(private readonly youtubeService: YoutubeService,
+    constructor(private readonly processService: ProcessService,
                 private readonly dialog: MatDialog,) {
     }
 
@@ -42,7 +43,7 @@ export class ProcessOneVideoTileComponent {
                 .pipe(
                     filter(result => !!result),
                     tap(() => (this.youtubeUrlOrIdControl.reset())),
-                    switchMap(result => this.youtubeService.processVideos(result))
+                    switchMap(result => this.processService.triggerProcess(result))
                 )
                 .subscribe();
         }

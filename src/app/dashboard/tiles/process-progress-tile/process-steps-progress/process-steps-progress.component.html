@@ -1,0 +1,39 @@
+<ng-template ngFor let-last="last" let-processStepData [ngForOf]="processStepsData">
+    <div class="step-description">
+        <ng-container [ngTemplateOutlet]="statusIcon"
+                      [ngTemplateOutletContext]="{
+                        processStepData: processStepData,
+                      }">
+        </ng-container>
+
+        <span>{{ processStepData.label }}</span>
+    </div>
+
+    <div *ngIf="!last" class="step-separator">
+        <div class="step-separator-content"></div>
+    </div>
+</ng-template>
+
+<ng-template #statusIcon let-processStepData="processStepData">
+    <div class="status-icon">
+        <ng-template [ngIf]="processStepData.hasFailed" [ngIfElse]="notFailed">
+            <mat-icon class="fail-icon">close</mat-icon>
+        </ng-template>
+
+        <ng-template #notFailed>
+            <ng-template [ngIf]="processStepData.hasCompleted" [ngIfElse]="inProgress">
+                <mat-icon class="done-icon">done</mat-icon>
+            </ng-template>
+
+            <ng-template #inProgress>
+                <ng-template [ngIf]="processStepData.hasStarted" [ngIfElse]="notStarted">
+                    <mat-icon class="in-progress-icon">pending</mat-icon>
+                </ng-template>
+
+                <ng-template #notStarted>
+                    <mat-icon class="not-started-icon material-icons-outlined">circle</mat-icon>
+                </ng-template>
+            </ng-template>
+        </ng-template>
+    </div>
+</ng-template>

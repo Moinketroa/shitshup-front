@@ -8,7 +8,6 @@ import {
     NullYoutubeShitshupPlaylists,
     YoutubeShitshupPlaylists,
 } from '../models/youtube-playlist.model';
-import { ProcessRequest } from '../dtos/process-request.dto';
 
 @Injectable({
     providedIn: 'root',
@@ -52,11 +51,5 @@ export class YoutubeService {
                     return of(new NullYoutubePlaylistPreview());
                 })
             );
-    }
-
-    processVideos(processRequest: ProcessRequest): Observable<any> {
-        const endPoint = 'process';
-
-        return this.http.post(`${this.baseUrl}/${this.path}/${endPoint}`, processRequest);
     }
 }

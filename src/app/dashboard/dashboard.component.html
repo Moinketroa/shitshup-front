@@ -18,12 +18,8 @@
             </shitshup-process-pendings-tile>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="8" rowspan="4" *ngIf="showWarnings" class="dashboard-warnings--tile">
-            <shitshup-warnings-tile></shitshup-warnings-tile>
-        </mat-grid-tile>
-
-        <mat-grid-tile colspan="8" rowspan="4" *ngIf="showTaskProgress" class="dashboard-task-progress--tile">
-            <shitshup-task-progress-tile></shitshup-task-progress-tile>
+        <mat-grid-tile colspan="8" rowspan="4" *ngIf="showProcessProgress" class="dashboard-process-progress--tile">
+            <shitshup-process-progress-tile></shitshup-process-progress-tile>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
